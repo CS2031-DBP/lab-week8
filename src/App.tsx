@@ -1,4 +1,4 @@
-import StudentForm from "./studentForm";
+import StudentForm from "./StudentForm";
 import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
 
 function App() {

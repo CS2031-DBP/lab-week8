@@ -34,3 +34,14 @@ export async function studentGet(): Promise<AxiosResponse> {
     throw error;
   }
 }
+
+export async function studentPut(student: Student): Promise<AxiosResponse> {
+  try {
+    const response = await axios.put(`${BACKEND_URL}/student/${student.id}`, student);
+    console.log(response);
+    return response;
+  } catch (error: unknown) {
+    console.error(error);
+    throw error;
+  }
+}

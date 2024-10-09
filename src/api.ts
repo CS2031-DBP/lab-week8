@@ -1,4 +1,4 @@
-import axios, { type AxiosResponse } from 'axios';
+import axios, { type AxiosResponse } from "axios";
 
 const BACKEND_URL: string = "http://localhost:8080";
 
@@ -11,11 +11,22 @@ export type Student = {
   age: number;
   description: string;
   password: string;
-}
+};
 
 export async function studentPost(student: Student): Promise<AxiosResponse> {
   try {
     const response = await axios.post(`${BACKEND_URL}/student`, student);
+    console.log(response);
+    return response;
+  } catch (error: unknown) {
+    console.error(error);
+    throw error;
+  }
+}
+
+export async function studentGet(): Promise<AxiosResponse> {
+  try {
+    const response = await axios.get(`${BACKEND_URL}/student`);
     console.log(response);
     return response;
   } catch (error: unknown) {

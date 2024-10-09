@@ -1,7 +1,7 @@
 import { studentPost, type Student } from "./api";
+import NavBar from "./components/NavBar";
 
 function StudentForm() {
-  
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const form = event.currentTarget;
@@ -26,19 +26,7 @@ function StudentForm() {
   return (
     <>
       <div className="bg-gray-100">
-        <nav className="w-full bg-slate-200 py-4 px-4 sm:px-8 flex justify-between items-center">
-          <div className="text-lg font-semibold">Estudiantes Sparky</div>
-          <ul className="flex space-x-4">
-            <li>
-              <a
-                href="index.html"
-                className="py-2 px-4 bg-slate-200 hover:bg-slate-300 rounded-full transition"
-              >
-                Registro
-              </a>
-            </li>
-          </ul>
-        </nav>
+        <NavBar />
 
         <main className="flex justify-center items-center min-h-screen">
           <article className="bg-white shadow-md rounded-lg p-8 max-w-md w-full">
